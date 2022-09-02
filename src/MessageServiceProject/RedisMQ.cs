@@ -21,7 +21,7 @@ namespace MessageServiceProject
         }
 
         /// <summary>
-        /// 非阻塞出队 
+        /// Dequeue==>Push
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -41,7 +41,7 @@ namespace MessageServiceProject
         }
 
         /// <summary>
-        /// 阻塞出队
+        /// Dequeue==>Push
         /// </summary>
         /// <param name="key"></param>
         /// <param name="timeSpan"></param>

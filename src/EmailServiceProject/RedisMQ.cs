@@ -13,7 +13,7 @@ namespace EmailServiceProject
             this._redisClient = new RedisClient(redisHost);
         }
 
-        public long EnQueue(string key,string message)
+        public long EnQueue(string key, string message)
         {
             byte[] messageBytes = Encoding.UTF8.GetBytes(message);
             var count = _redisClient.LPush(key, messageBytes);
@@ -21,7 +21,7 @@ namespace EmailServiceProject
         }
 
         /// <summary>
-        /// 非阻塞出队 
+        /// DeQueue (Pull)
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -29,7 +29,7 @@ namespace EmailServiceProject
         {
             byte[] messageBytes = _redisClient.RPop(key);
             string message = string.Empty;
-            if (messageBytes==null)
+            if (messageBytes == null)
             {
                 Console.WriteLine("队列中没有数据......");
             }
@@ -41,7 +41,7 @@ namespace EmailServiceProject
         }
 
         /// <summary>
-        /// 阻塞出队
+        /// Blocking pop item from queue(Push)
         /// </summary>
         /// <param name="key"></param>
         /// <param name="timeSpan"></param>
@@ -56,6 +56,5 @@ namespace EmailServiceProject
         {
             _redisClient.Dispose();
         }
-
     }
 }

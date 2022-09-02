@@ -13,7 +13,7 @@ namespace AsyncRedisProject
             this._redisClient = new RedisClient(redisHost);
         }
 
-        public long EnQueue(string key,string message)
+        public long EnQueue(string key, string message)
         {
             byte[] messageBytes = Encoding.UTF8.GetBytes(message);
             var count = _redisClient.LPush(key, messageBytes);
@@ -29,7 +29,7 @@ namespace AsyncRedisProject
         {
             byte[] messageBytes = _redisClient.RPop(key);
             string message = string.Empty;
-            if (messageBytes==null)
+            if (messageBytes == null)
             {
                 Console.WriteLine("No Data in Queue......");
             }
@@ -56,6 +56,5 @@ namespace AsyncRedisProject
         {
             _redisClient.Dispose();
         }
-
     }
 }
