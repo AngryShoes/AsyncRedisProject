@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EmailServiceProject
+namespace Upstream
 {
     public class RedisMQ : IDisposable
     {
@@ -50,6 +50,11 @@ namespace EmailServiceProject
         {
             string message = _redisClient.BlockingPopItemFromList(key, timeSpan);
             return message;
+        }
+
+        public long GetQueueCount(string QKey)
+        {
+            return _redisClient.GetListCount(QKey);
         }
 
         public void Dispose()
