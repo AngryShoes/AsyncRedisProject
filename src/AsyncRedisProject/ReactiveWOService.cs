@@ -20,20 +20,20 @@ namespace AsyncRedisProject
             Console.WriteLine($"========WO Created：Wo Number：{woNumber}========");
             Console.WriteLine(Environment.NewLine);
 
-            //EmailService emailService = new EmailService();
-            //emailService.SendAsync(woNumber);
-            //Console.WriteLine(Environment.NewLine);
+            EmailService emailService = new EmailService();
+            emailService.SendAsync(woNumber);
+            Console.WriteLine(Environment.NewLine);
 
-            //TextMessageService textMessageService = new TextMessageService();
-            //textMessageService.SendAsync(woNumber);
-            //Console.WriteLine(Environment.NewLine);
+            TextMessageService textMessageService = new TextMessageService();
+            textMessageService.SendAsync(woNumber);
+            Console.WriteLine(Environment.NewLine);
 
-            using (var mq = new RedisMQ("localhost:6379"))
-            {
-                mq.EnQueue("wo_email", $"{woNumber}");
-                mq.EnQueue("wo_message", $"{woNumber}");
+            //using (var mq = new RedisMQ("localhost:6379"))
+            //{
+            //    mq.EnQueue("wo_email", $"{woNumber}");
+            //    mq.EnQueue("wo_message", $"{woNumber}");
 
-            }
+            //}
             stopwatch.Stop();
             Console.WriteLine($"Finished，Time-Span：{stopwatch.ElapsedMilliseconds} ms");
         }

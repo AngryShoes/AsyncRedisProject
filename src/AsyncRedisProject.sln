@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncRedisProject", "AsyncRedisProject\AsyncRedisProject.csproj", "{C283354F-304E-4020-858E-A58D106DE094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncRedisProject", "AsyncRedisProject\AsyncRedisProject.csproj", "{C283354F-304E-4020-858E-A58D106DE094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailServiceProject", "EmailServiceProject\EmailServiceProject.csproj", "{FD4618A4-23EA-4445-9C82-586FB4B9CAA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailServiceProject", "EmailServiceProject\EmailServiceProject.csproj", "{FD4618A4-23EA-4445-9C82-586FB4B9CAA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageServiceProject", "MessageServiceProject\MessageServiceProject.csproj", "{1E270451-0F68-4E73-8C77-956287FA34CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageServiceProject", "MessageServiceProject\MessageServiceProject.csproj", "{1E270451-0F68-4E73-8C77-956287FA34CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Async", "Async", "{B49C48BA-4276-465E-A79E-D6969C0BAF64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{81382C09-2679-41E5-B778-E226D391E67D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlowLimit", "FlowLimit", "{2CAF2B6D-AF07-40EB-873C-C57326719FEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +36,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C283354F-304E-4020-858E-A58D106DE094} = {B49C48BA-4276-465E-A79E-D6969C0BAF64}
+		{FD4618A4-23EA-4445-9C82-586FB4B9CAA1} = {B49C48BA-4276-465E-A79E-D6969C0BAF64}
+		{1E270451-0F68-4E73-8C77-956287FA34CE} = {B49C48BA-4276-465E-A79E-D6969C0BAF64}
+		{B49C48BA-4276-465E-A79E-D6969C0BAF64} = {81382C09-2679-41E5-B778-E226D391E67D}
+		{2CAF2B6D-AF07-40EB-873C-C57326719FEF} = {81382C09-2679-41E5-B778-E226D391E67D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5F09180-F47D-4BB8-872F-A9C3BD62512E}
